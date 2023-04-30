@@ -1,11 +1,9 @@
 #include "doctest.h"
-#include "sources/Fraction.cpp"
 #include "sources/Fraction.hpp"
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <stdexcept>
+using namespace ariel;
+using namespace std;
 
+using namespace ariel;
 using namespace std;
 
 TEST_CASE("Check Constructors"){
@@ -15,8 +13,8 @@ TEST_CASE("Check Constructors"){
     CHECK_THROWS(Fraction(8,0));
     CHECK_NOTHROW(Fraction(0,-8));
 
-    CHECK(f1.getNumerator() == 2);
-    CHECK(f1.getDenominator() == 4);
+    CHECK(f1.getNumerator() == 1);
+    CHECK(f1.getDenominator() == 2);
 
     CHECK(f2.getNumerator() == 7);
     CHECK(f2.getDenominator() == 3); 
@@ -58,7 +56,7 @@ TEST_CASE("Check Operators"){
 
     //check '='
     Fraction f3(6, 8);
-    CHECK(f1 == f2);
+    CHECK_FALSE(f1 == f2);
     CHECK_FALSE(f1 == f3);
 
     //check bool operations

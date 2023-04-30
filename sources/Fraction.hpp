@@ -20,10 +20,13 @@ namespace ariel
         //Constructor
         Fraction(int, int);
         
+        //destructor
+        ~Fraction();
+        
         //Helpers
         void reduce();
-        int gcd(int a, int b) const;
-        int lcm(int a, int b) const;
+        int gcd(int num1, int num2) const;
+        int lcm(int num1, int num2) const;
 
         //Getters & Setters
         int getNumerator() const;
@@ -52,8 +55,8 @@ namespace ariel
         bool operator!= (Fraction& other) const;
 
         //Other operations
-        friend std::ostream& operator<<(std::ostream& os, const Fraction& f);
-        friend std::istream& operator>>(std::istream& is, Fraction& f);
+        friend std::ostream& operator<<(std::ostream& os_, const Fraction& other);
+        friend std::istream& operator>>(std::istream& is_, Fraction& other);
 
         //Functions with friend implemention for float
         friend Fraction operator+ (float float_num, const Fraction& other);
